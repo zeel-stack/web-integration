@@ -37,6 +37,25 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         >
           Web Pop-ups
         </button>
+
+          <button
+          onClick={() => {
+            setActiveTab("native-display");
+            // Automatically fire the payload trigger when they click the tab
+            if (typeof window !== 'undefined' && window.clevertap) {
+              window.clevertap.event.push("web native event");
+              console.log("Fired CleverTap Event: web native event");
+            }
+          }}
+          className={`px-4 py-2 rounded transition font-medium ${
+            activeTab === "native-display"
+              ? "bg-amber-600 text-white"
+              : "bg-slate-700 hover:bg-slate-600 text-amber-400"
+          }`}
+        >
+          ✨ Native Display
+        </button>
+
       </div>
     </nav>
   );
