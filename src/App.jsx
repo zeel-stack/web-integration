@@ -1,8 +1,8 @@
 import { useState } from "react";
 import CreateUser from "./components/CreateUser";
 import Notification from "./components/Notification";
-import NativeDisplay from "./Components/NativeDisplay";
-import Navbar from "./Components/Navbar";
+import NativeDisplay from "./components/NativeDisplay";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [activeTab, setActiveTab] = useState("create-user");
