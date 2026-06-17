@@ -1,0 +1,8 @@
+{
+  "name": "CleverTap PWA App",
+  "short_name": "CTPWA",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#f5f5f5",
+  "icons": []
+}
