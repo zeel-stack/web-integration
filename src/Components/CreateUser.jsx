@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import clevertap from 'clevertap-web-sdk'
-import crypto from 'crypto'
 
 const CreateUser = () => {
 
