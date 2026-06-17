@@ -5,17 +5,19 @@ const Notification = () => {
 
   const handleEnablePush = () => {
 
-    CleverTap.event.push("Web Notification On")
+    // ✅ STEP 1: Subscribe the user to push notifications FIRST
+  CleverTap.notifications.push({
+    titleText: "Would you like to receive Push Notifications?",
+    bodyText: "We promise to only send you relevant content and give you updates on your transactions",
+    okButtonText: "Sign me up!",
+    rejectButtonText: "No thanks",
+    okButtonColor: "#1976D2",
+    askAgainTimeInSeconds: 5,
+    serviceWorkerPath: "/CleverTap_sw.js"
+  });
 
-    // CleverTap.notifications.push({
-    //   titleText: "Would you like to receive Push Notifications?",
-    //   bodyText: "We promise to only send you relevant content and give you updates on your transactions",
-    //   okButtonText: "Sign me up!",
-    //   rejectButtonText: "No thanks",
-    //   okButtonColor: "#1976d2",
-    //   askAgainTimeInSeconds: 5,
-    //   serviceWorkerPath: "/CleverTap_sw.js"
-    // });
+  // ✅ STEP 2: Then push the event to trigger your campaign
+  CleverTap.event.push("Web Notification On");
   };
 
   return (
